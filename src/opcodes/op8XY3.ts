@@ -1,8 +1,9 @@
-import { produce } from '../utils';
+import produce from '../utils/produce';
+import { getY, getX } from '../utils/bit';
 
 const op8XY3 = produce(state => {
-  const X = (state.OPCODE & 0x0f00) >> 8;
-  const Y = (state.OPCODE & 0x00f0) >> 4;
+  const X = getX(state.OPCODE) >> 8;
+  const Y = getY(state.OPCODE) >> 4;
 
   state.V[X] ^= state.V[Y];
 });

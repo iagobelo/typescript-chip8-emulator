@@ -1,4 +1,4 @@
-import { produce } from './utils';
+import produce from './utils/produce';
 
 const updateTimers = produce(state => {
   state.DELAY_TIMER =

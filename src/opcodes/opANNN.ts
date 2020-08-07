@@ -1,9 +1,8 @@
-import { produce } from '../utils';
+import produce from '../utils/produce';
+import { getNNN } from '../utils/bit';
 
 const opANNN = produce(state => {
-  const NNN = state.OPCODE & 0x0fff;
-
-  state.I = NNN;
+  state.I = getNNN(state.OPCODE);
 });
 
 export default opANNN;

@@ -1,4 +1,4 @@
-import { produce } from '../utils';
+import produce from '../utils/produce';
 
 const op00EE = produce(state => {
   --state.SP;

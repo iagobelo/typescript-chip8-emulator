@@ -1,12 +1,10 @@
 import produce from '../utils/produce';
 import { getX } from '../utils/bit';
 
-const op8XYE = produce(state => {
+const opFX1E = produce(state => {
   const X = getX(state.OPCODE) >> 8;
 
-  state.V[0xf] = (state.V[X] & 0x80) >> 7;
-
-  state.V[X] <<= 1;
+  state.I = state.V[X];
 });
 
-export default op8XYE;
+export default opFX1E;

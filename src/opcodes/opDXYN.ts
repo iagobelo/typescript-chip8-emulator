@@ -1,9 +1,10 @@
-import { produce } from '../utils';
+import produce from '../utils/produce';
+import { getX, getY, getN } from '../utils/bit';
 
 const opDXYN = produce(state => {
-  const X = (state.OPCODE & 0x0f00) >> 8;
-  const Y = (state.OPCODE & 0x00f0) >> 4;
-  const N = state.OPCODE & 0x000f;
+  const X = getX(state.OPCODE) >> 8;
+  const Y = getY(state.OPCODE) >> 4;
+  const N = getN(state.OPCODE);
 
   for (let row = 0; row < N; row += 1) {
     const pixel = state.MEMORY[state.I + row];

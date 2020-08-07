@@ -1,4 +1,4 @@
-import { produce } from './utils';
+import produce from './utils/produce';
 
 const decodeOpcode = produce(state => {
   state.OPCODE = state.OPCODE & 0xf000;

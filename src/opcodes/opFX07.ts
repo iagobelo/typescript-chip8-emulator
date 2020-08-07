@@ -1,7 +1,8 @@
-import { produce } from '../utils';
+import produce from '../utils/produce';
+import { getX } from '../utils/bit';
 
 const opFX07 = produce(state => {
-  const X = (state.OPCODE & 0x0f00) >> 8;
+  const X = getX(state.OPCODE) >> 8;
 
   state.V[X] = state.DELAY_TIMER;
 });
